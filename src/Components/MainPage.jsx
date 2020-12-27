@@ -2,7 +2,7 @@ import React from 'react'
 import ActivityLoader from '../Components/ActivityLoader'
 import '../Components/Styles/MainPage.css'
 
-function MainPage () {
+const MainPage = () => {
     return (
         <div className='main-body'>
             <h1>Bored App</h1>

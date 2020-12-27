@@ -1,4 +1,6 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
+import axios from 'axios'
+import ActivityCard from '../Components/ActivityCard'
 import {Button} from '@material-ui/core'
 
 const  ActivityLoader = () => {
@@ -13,16 +15,29 @@ const  ActivityLoader = () => {
     }
 
     const [activity, setActivity] = useState(initialState)
-    const [submitted, setSubmitted] = useState(false)
+    // const [submitted, setSubmitted] = useState(false)
 
-    const handleActivityChange = (event) => {
-        
+    const requestNewActivity = async () => {
+        const response = await axios.get('http://www.boredapi.com/api/activity/')
+        console.log(response.data)
+        setActivity(response.data)
     }
+
+    // const handleActivityChange = (event) => {
+
+    // }
+
     return (
-        <Button color='primary' variant='contained' size='large' >
-            Try something new
-        </Button>
-        )
+        <>
+            <Button color='primary' variant='contained' size='large' onClick={requestNewActivity}>
+                Try something new
+            </Button>
+            <div className='activity-card'>
+                <ActivityCard activity={activity}/>
+            </div>
+        </>
+            )
+       
 }
 
 
