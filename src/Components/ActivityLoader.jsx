@@ -1,9 +1,10 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import ActivityCard from '../Components/ActivityCard'
+import '../Components/Styles/ActivityLoader.css'
 import {Button} from '@material-ui/core'
 
-const  ActivityLoader = () => {
+const ActivityLoader = () => {
     const initialState = {
         activity : '',
         accessibility: 0,
@@ -14,8 +15,11 @@ const  ActivityLoader = () => {
         key: ''
     }
 
-    const [activity, setActivity] = useState(initialState)
-    // const [submitted, setSubmitted] = useState(false)
+    const setRandomColor = () => {
+        let randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+         setColor(randomColor)
+    }
+
 
     const requestNewActivity = async () => {
         const response = await axios.get('http://www.boredapi.com/api/activity/')
@@ -23,17 +27,22 @@ const  ActivityLoader = () => {
         setActivity(response.data)
     }
 
-    // const handleActivityChange = (event) => {
+    const handleAllActivity = async () => {
+        setRandomColor()
+        requestNewActivity()
+    }
+    
+    const [activity, setActivity] = useState(initialState)
+    const [color, setColor] = useState('')
 
-    // }
 
     return (
         <>
-            <Button color='primary' variant='contained' size='large' onClick={requestNewActivity}>
+            <Button color='primary' variant='contained' size='large' onClick={handleAllActivity}>
                 Try something new
             </Button>
             <div className='activity-card'>
-                <ActivityCard activity={activity}/>
+                <ActivityCard activity={activity} color={color}/>
             </div>
         </>
             )
