@@ -28,8 +28,8 @@ const ActivityLoader = () => {
     }
 
     const handleAllActivity = async () => {
-        setRandomColor()
         requestNewActivity()
+        setRandomColor()
     }
     
     const [activity, setActivity] = useState(initialState)
