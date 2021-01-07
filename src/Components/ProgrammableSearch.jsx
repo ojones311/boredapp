@@ -1,11 +1,11 @@
-import React,{useEffect} from 'react'
+import React, {useEffect} from 'react'
 
 
 const ProgrammableSearch = () => {
-    
+    let url = "https://cse.google.com/cse.js?cx=591758451358fdc45"
     useEffect(() => {
         const script = document.createElement('script')
-        script.src = "https://cse.google.com/cse.js?cx=591758451358fdc45"
+        script.src = url
         script.async = true 
 
         document.body.appendChild(script)
@@ -13,14 +13,11 @@ const ProgrammableSearch = () => {
         return () => {
             document.body.removeChild(script)
         }
-    },[])
-    
-    document.body.appendChild(script)
+    },[url])
     return(
         <div>
             <script async src="https://cse.google.com/cse.js?cx=591758451358fdc45"></script>
             <div class="gcse-search"></div>
-            <p>ty</p>
         </div>
     )
 }
