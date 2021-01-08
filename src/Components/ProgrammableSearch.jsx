@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-
+import '../Components/Styles/ProgrammableSearch.css'
 
 const ProgrammableSearch = () => {
     let url = "https://cse.google.com/cse.js?cx=591758451358fdc45"
@@ -17,7 +17,7 @@ const ProgrammableSearch = () => {
     return(
         <div>
             <script async src="https://cse.google.com/cse.js?cx=591758451358fdc45"></script>
-            <div class="gcse-search"></div>
+            <div class="gcse-search" ></div>
         </div>
     )
 }
