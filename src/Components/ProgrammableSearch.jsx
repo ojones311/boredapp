@@ -40,10 +40,14 @@ const ProgrammableSearch = ({activity}) => {
             console.log('err', error)
         }    
     }
+    const di
     const [results, setResults] = useState(initialState)
     return(
         <div>
-            <button onClick={fetchGoogleResults}>Load results</button>
+            <div className='load-result-button'>
+                <button onClick={fetchGoogleResults}>Load results</button>
+            </div>
+            <SearchResults results={results}/>
         </div>
     )
 }
