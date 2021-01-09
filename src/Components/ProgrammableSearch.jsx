@@ -5,11 +5,15 @@ import '../Components/Styles/ProgrammableSearch.css'
 
 
 const ProgrammableSearch = ({activity}) => {
-    const initialState = {
-        searchTerm: activity.activity,
-        googleResults: '',
-        searchSubmitted: false,  
-    }
+   
+    // const displayResults = async () => {
+    //     console.log(results)
+    //    await results.googleResults.map((result) => {
+    //         return(
+    //             <SearchResult result={result}/>
+    //         )
+    //     }) 
+    // }
 
     const fetchGoogleResults = async () => {
         try{
@@ -17,28 +21,26 @@ const ProgrammableSearch = ({activity}) => {
             console.log('response',response.data.items)
 
             setResults(response.data.items)
+            console.log(results)
+            // displayResults()
         }catch(error){
             console.log('err', error)
         }    
     }
-    const displayResults = () => {
-        results.googleResults.map((result) => {
-            return(
-                <SearchResult result={result}/>
-            )
-        }) 
-    }
-    const [results, setResults] = useState(initialState)
     
-    // useEffect(() => {
-
-    // })
+    const [results, setResults] = useState('')
+    
+    useEffect(() => {
+        console.log(results)
+    })
     return(
         <div>
             <div className='load-result-button'>
-                <button onClick={fetchGoogleResults}>Load results</button>
+                <button onClick={fetchGoogleResults}> More Info</button>
             </div>
-            {displayResults}
+            {/* <div className='results'>
+                {displayResults}
+            </div> */}
         </div>
     )
 }

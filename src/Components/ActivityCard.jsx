@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import ProgrammableSearch from '../Components/ProgrammableSearch'
 import {Card} from '@material-ui/core'
 import {makeStyles} from '@material-ui/core/styles'
 
@@ -22,12 +23,14 @@ const ActivityCard = ({activity, color}) => {
             <Card className={classes.root}>
                 <h3>{activity.activity}</h3>
                 <a href={activity.link}>Learn More</a>
+                <ProgrammableSearch activity={activity}/>
             </Card>
         )
     }else if(activity.activity !== ''){
         return(
             <Card className={classes.root}>
                 <h3>{activity.activity}</h3>
+                <ProgrammableSearch activity={activity}/>
             </Card>
         )
     }else {
