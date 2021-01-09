@@ -1,29 +1,8 @@
 import React, {useState, useEffect} from 'react'
+import SearchResult from './SearchResult'
 import axios from 'axios'
 import '../Components/Styles/ProgrammableSearch.css'
 
-// const ProgrammableSearch = () => {
-//     let url = "https://cse.google.com/cse.js?cx=591758451358fdc45"
-//     useEffect(() => {
-//         const script = document.createElement('script')
-//         script.src = url
-//         script.async = true 
-
-//         document.body.appendChild(script)
-
-//         return () => {
-//             document.body.removeChild(script)
-//         }
-//     },[url])
-//     return(
-//         <div>
-//             <script async src="https://cse.google.com/cse.js?cx=591758451358fdc45"></script>
-//             <div class="gcse-search" ></div>
-//         </div>
-//     )
-// }
-
-// export default ProgrammableSearch
 
 const ProgrammableSearch = ({activity}) => {
     const initialState = {
@@ -31,23 +10,35 @@ const ProgrammableSearch = ({activity}) => {
         googleResults: '',
         searchSubmitted: false,  
     }
+
     const fetchGoogleResults = async () => {
         try{
             let response = await axios.get(`https://www.googleapis.com/customsearch/v1?key=${process.env.REACT_APP_GOOGLE_SEARCH_API_KEY}&cx=591758451358fdc45&q=${activity.activity}`)
             console.log('response',response.data.items)
-            // setResults(response.items)
+
+            setResults(response.data.items)
         }catch(error){
             console.log('err', error)
         }    
     }
-    const di
+    const displayResults = () => {
+        results.googleResults.map((result) => {
+            return(
+                <SearchResult result={result}/>
+            )
+        }) 
+    }
     const [results, setResults] = useState(initialState)
+    
+    // useEffect(() => {
+
+    // })
     return(
         <div>
             <div className='load-result-button'>
                 <button onClick={fetchGoogleResults}>Load results</button>
             </div>
-            <SearchResults results={results}/>
+            {displayResults}
         </div>
     )
 }
