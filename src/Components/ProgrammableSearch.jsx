@@ -25,25 +25,25 @@ import '../Components/Styles/ProgrammableSearch.css'
 
 // export default ProgrammableSearch
 
-const ProgrammableSearch = (props) => {
+const ProgrammableSearch = ({activity}) => {
     const initialState = {
-        searchTerm: props.activity.activity,
+        searchTerm: activity.activity,
         googleResults: '',
         searchSubmitted: false,  
     }
     const fetchGoogleResults = async () => {
         try{
-            let response = axios.get(`https://www.googleapis.com/customsearch/v1?key=${process.env.REACT_APP_GOOGLE_SEARCH_API_KEY}&cx=591758451358fdc45&q=food`)
-            console.log('response',response)
-            setResults(response.data)
+            let response = await axios.get(`https://www.googleapis.com/customsearch/v1?key=${process.env.REACT_APP_GOOGLE_SEARCH_API_KEY}&cx=591758451358fdc45&q=${activity.activity}`)
+            console.log('response',response.data.items)
+            // setResults(response.items)
         }catch(error){
-            console.log('err',error)
+            console.log('err', error)
         }    
     }
     const [results, setResults] = useState(initialState)
     return(
         <div>
-            
+            <button onClick={fetchGoogleResults}>Load results</button>
         </div>
     )
 }
