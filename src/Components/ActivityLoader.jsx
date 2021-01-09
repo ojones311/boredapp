@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import ActivityCard from '../Components/ActivityCard'
+import ProgrammableSearch from './ProgrammableSearch'
 import '../Components/Styles/ActivityLoader.css'
 import {Button} from '@material-ui/core'
 
@@ -44,6 +45,7 @@ const ActivityLoader = () => {
             <div className='activity-card'>
                 <ActivityCard activity={activity} color={color}/>
             </div>
+            <ProgrammableSearch activity={activity}/>
         </>
             )
        
