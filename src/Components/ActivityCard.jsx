@@ -20,18 +20,22 @@ const ActivityCard = ({activity, color}) => {
     
     if(activity.activity !== '' && activity.link !== ''){
         return (
+            <>
             <Card className={classes.root}>
                 <h3>{activity.activity}</h3>
                 <a href={activity.link}>Learn More</a>
-                <ProgrammableSearch activity={activity}/>
             </Card>
+            <ProgrammableSearch activity={activity}/>
+            </>
         )
     }else if(activity.activity !== ''){
         return(
+            <>
             <Card className={classes.root}>
                 <h3>{activity.activity}</h3>
-                <ProgrammableSearch activity={activity}/>
             </Card>
+            <ProgrammableSearch activity={activity}/>
+            </>
         )
     }else {
         return(

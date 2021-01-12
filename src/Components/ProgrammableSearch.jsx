@@ -17,16 +17,7 @@ const ProgrammableSearch = ({activity}) => {
             console.log('err', error)
         }    
     }
-
-    // const displayResults = async (data) => {
-    //     console.log(data)
-    //     data.map((elem) => {
-    //         return (
-    //             <SearchResult result={elem}/>
-    //         )
-    //     })
-    // }
-
+   
     const [results, setResults] = useState([])  
     
     return(
