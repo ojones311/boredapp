@@ -27,6 +27,7 @@ const ActivityLoader = () => {
             const response = await axios.get('http://www.boredapi.com/api/activity/')
             console.log(response.data)
             setActivity(response.data)
+
         }catch(error){
             console.log('err', error)
         }   
@@ -39,6 +40,7 @@ const ActivityLoader = () => {
     
     const [activity, setActivity] = useState(initialState)
     const [color, setColor] = useState('')
+    
 
 
     return (
@@ -48,7 +50,6 @@ const ActivityLoader = () => {
             </Button>
             <div className='activity-card'>
                 <ActivityCard activity={activity} color={color}/>
-                {/* <SearchResult /> */}
             </div>
         </>
             )
