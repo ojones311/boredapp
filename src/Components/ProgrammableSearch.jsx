@@ -17,13 +17,25 @@ const ProgrammableSearch = ({activity}) => {
             console.log('err', error)
         }    
     }
-    
-    const [results, setResults] = useState([])  
-    
+    const rateThrottle = () => {
+        setCount(count + 1)
+    }
+    const resetCount = () => {
+        setCount(0)
+    }
+    const [results, setResults] = useState([]) 
+    const [count, setCount] = useState(0)
+
+    useEffect(() => {
+       resetCount()
+    },[activity])
+
     return(
         <div>
             <div className='load-result-button'>
                 <button onClick={async () => await fetchGoogleResults()}> More Info</button>
+                <button onClick={rateThrottle}>load </button>
+                <p>{count}</p>
             </div>
             <div className='results'>
             {results.map((elem) => {

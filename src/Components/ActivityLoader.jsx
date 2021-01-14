@@ -1,7 +1,6 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import axios from 'axios'
 import ActivityCard from '../Components/ActivityCard'
-import SearchResult from '../Components/SearchResult'
 import '../Components/Styles/ActivityLoader.css'
 import {Button} from '@material-ui/core'
 
@@ -27,7 +26,6 @@ const ActivityLoader = () => {
             const response = await axios.get('http://www.boredapi.com/api/activity/')
             console.log(response.data)
             setActivity(response.data)
-
         }catch(error){
             console.log('err', error)
         }   
@@ -40,8 +38,6 @@ const ActivityLoader = () => {
     
     const [activity, setActivity] = useState(initialState)
     const [color, setColor] = useState('')
-    
-
 
     return (
         <>
@@ -49,7 +45,7 @@ const ActivityLoader = () => {
                 Try something new
             </Button>
             <div className='activity-card'>
-                <ActivityCard activity={activity} color={color}/>
+                <ActivityCard activity={activity} color={color} />
             </div>
         </>
             )
