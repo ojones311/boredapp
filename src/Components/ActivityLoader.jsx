@@ -38,7 +38,7 @@ const ActivityLoader = () => {
     
     const [activity, setActivity] = useState(initialState)
     const [color, setColor] = useState('')
-
+    
     return (
         <>
             <Button color='primary' variant='contained' size='large' onClick={handleAllActivity}>
