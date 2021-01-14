@@ -20,12 +20,15 @@ const ProgrammableSearch = ({activity}) => {
     const mapResultData = () => {
        let mappedResults = results.map((elem) => {
             return(
-                <SearchResult key={elem.i} result={elem}/>
+                <SearchResult result={elem}/>
             )
         })
         console.log('mapped')
         return mappedResults
     }
+    // filterUniqueResults = () => {
+
+    // }
     const resetResults = () => {
         setResults([])
         console.log('reset')
@@ -37,7 +40,7 @@ const ProgrammableSearch = ({activity}) => {
     },[activity])
 
     let mapResults = mapResultData()
-    
+
     return(
         <div>
             <div className='load-result-button'>
