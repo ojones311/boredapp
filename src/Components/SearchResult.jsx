@@ -1,12 +1,6 @@
 import React from 'react'
 const SearchResult = ({result}) => {
-    // if(result.pagemap.cse_thumbnail){
-
-    // }else if(result.pagemap){
-
-    // }else{
-
-    // }
+   
     const chooseImageSource = () => {
         if(result.pagemap.cse_thumbnail){
             return result.pagemap.cse_thumbnail[0].src
