@@ -14,6 +14,22 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
 }
+.result {
+    margin: 0 auto;
+    width: 80%;
+    height: 75%;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.result:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+#result-photo {
+    height: 100px;
+    width: 125px
+}
+
 a {
     color: black;
 }

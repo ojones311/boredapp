@@ -1,5 +1,4 @@
 import React from 'react'
-
 const SearchResult = ({result}) => {
     // if(result.pagemap.cse_thumbnail){
 
@@ -8,19 +7,20 @@ const SearchResult = ({result}) => {
     // }else{
 
     // }
-    // const chooseImageSource = () => {
-    //     if(result.pagemap.cse_thumbnail){
-    //         return result.pagemap.cse_thumbnail[0].src
-    //     }else if(result.pagemap.metatags){
-    //         return result.pagemap.metatags[0].image
-    //     }else{
-    //         return ''
-    //     }
-    // }
+    const chooseImageSource = () => {
+        if(result.pagemap.cse_thumbnail){
+            return result.pagemap.cse_thumbnail[0].src
+        }else if(result.pagemap.metatags){
+            return result.pagemap.metatags[0].image
+        }else{
+            return './pics/placeholderimg.png'
+        }
+    }
+    let imgSrcSelection = chooseImageSource()
+
     return (
-        <div className={`result ${result.cacheId}`}>
-            {/* <img src={} alt={`pic${result.cacheId}`}></img> */}
-            {/* {chooseImageSource()} */}
+        <div className={`result`}>
+            <img id='result-photo' src={imgSrcSelection} alt={`pic${result.cacheId}`}></img>
             <a href={result.link}><h3>{result.title}</h3></a>
         </div>
     )
