@@ -21,7 +21,7 @@ const SearchResult = ({result}) => {
     return (
         <div className={`result`}>
             <img id='result-photo' src={imgSrcSelection} alt={`pic${result.cacheId}`}></img>
-            <a href={result.link}><h3>{result.title}</h3></a>
+            <a href={result.link}><p>{result.title}</p></a>
         </div>
     )
 }
