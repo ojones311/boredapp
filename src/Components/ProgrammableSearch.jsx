@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import SearchResult from './SearchResult'
+import {Button} from '@material-ui/core'
 import axios from 'axios'
 import '../Components/Styles/ProgrammableSearch.css'
 
@@ -26,9 +27,6 @@ const ProgrammableSearch = ({activity}) => {
         console.log('mapped')
         return mappedResults
     }
-    // filterUniqueResults = () => {
-
-    // }
     const resetResults = () => {
         setResults([])
         console.log('reset')
@@ -37,6 +35,7 @@ const ProgrammableSearch = ({activity}) => {
 
     useEffect(() => {
        resetResults()
+
     },[activity])
 
     let mapResults = mapResultData()
@@ -44,9 +43,10 @@ const ProgrammableSearch = ({activity}) => {
     return(
         <div>
             <div className='load-result-button'>
-                <button onClick={async () => await fetchGoogleResults()}> More Info</button>
+                <Button onClick={async () => await fetchGoogleResults()}> More Info
+                </Button>
             </div>
-            <div className='results'>
+            <div className='results' >
             {mapResults}
             </div>
         </div>
