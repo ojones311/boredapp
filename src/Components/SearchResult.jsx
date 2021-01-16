@@ -4,10 +4,11 @@ const SearchResult = ({result}) => {
     const chooseImageSource = () => {
         if(result.pagemap.cse_thumbnail){
             return result.pagemap.cse_thumbnail[0].src
-        }else if(result.pagemap.metatags){
+        }else if(result.pagemap.metatags[0].image){
             return result.pagemap.metatags[0].image
         }else{
-            return './pics/placeholderimg.png'
+            let imgUrl = './pics/placeholderimg.png'
+            return imgUrl
         }
     }
     let imgSrcSelection = chooseImageSource()

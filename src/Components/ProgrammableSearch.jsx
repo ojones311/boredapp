@@ -34,8 +34,7 @@ const ProgrammableSearch = ({activity}) => {
     const [results, setResults] = useState([]) 
 
     useEffect(() => {
-       resetResults()
-
+       resetResults([])
     },[activity])
 
     let mapResults = mapResultData()
@@ -47,7 +46,7 @@ const ProgrammableSearch = ({activity}) => {
                 </Button>
             </div>
             <div className='results' >
-            {mapResults}
+                {mapResults}
             </div>
         </div>
     )

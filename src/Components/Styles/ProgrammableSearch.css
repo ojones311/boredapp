@@ -4,14 +4,17 @@
 }
 
 .load-result-button {
-    padding: 5px;
+    padding: 15px;
 }
 
 .results {
     display: grid;
+    width: 70%;
+    grid-gap: 15px;
     margin: 0 auto;
     padding: 20px;
-    background-color:#F1F1F1;
+    border-radius: 15px;
+    background-color:#f1f1f1;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
 }
@@ -31,8 +34,8 @@
 }
 #result-photo {
     padding: 5px;
-    height: 120px;
-    width: 150px
+    height: 130px;
+    width: 200px
 }
 
 a {

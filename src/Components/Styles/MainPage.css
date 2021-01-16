@@ -3,7 +3,23 @@
     margin: 0 auto;
 }
 
-#main-title {
-    font-family: 'Indie Flower', cursive;
-    font-size: 70px;
+.flex-title{
+    display: flex;
+    width: 25%;
+    padding: 20px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+#B, #O, #R, #E, #D, #A, #P {
+    margin: 0 auto;
+    width: 50%;
+    font-size: 60px;
+    font-family: 'Indie Flower', 'cursive';
+}
+#space {
+    color: white;
+}
+#B:hover, #O:hover, #R:hover, #E:hover, #D:hover, #A:hover, #P:hover {
+    color: white;
 }
