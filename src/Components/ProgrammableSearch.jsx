@@ -20,7 +20,7 @@ const ProgrammableSearch = ({activity}) => {
     const mapResultData = () => {
        let mappedResults = results.map((elem) => {
             return(
-                <SearchResult result={elem}/>
+                <SearchResult key={elem.cacheId} result={elem}/>
             )
         })
         console.log('mapped')

@@ -11,6 +11,13 @@
     margin: 0 auto;
     padding: 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
+}
+a {
+    color: black;
+}
+
+a:hover {
+    color: blue;
 }
