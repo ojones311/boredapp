@@ -9,7 +9,6 @@
 
 .results {
     display: grid;
-    width: 70%;
     grid-gap: 15px;
     margin: 0 auto;
     padding: 20px;
@@ -35,7 +34,7 @@
 #result-photo {
     padding: 5px;
     height: 130px;
-    width: 200px
+    width: 80%;
 }
 
 a {
@@ -47,4 +46,17 @@ a {
 
 a:hover {
     color: blue;
+}
+
+@media only screen and (max-width:800px){
+    .results {
+        grid-template-columns: 1fr;
+        width: auto;
+    }
+
+    #result-photo {
+        padding: 5px;
+        height: 60%;
+        width: 50%;
+    }
 }

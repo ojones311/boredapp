@@ -23,3 +23,9 @@
 #B:hover, #O:hover, #R:hover, #E:hover, #D:hover, #A:hover, #P:hover {
     color: white;
 }
+
+@media only screen and (max-width:800px){
+    .flex-title {
+        width: 20%
+    }
+}
