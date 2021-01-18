@@ -23,7 +23,7 @@ const ActivityLoader = () => {
 
     const requestNewActivity = async () => {
         try{
-            const response = await axios.get('http://www.boredapi.com/api/activity/')
+            const response = await axios.get('https://www.boredapi.com/api/activity/')
             console.log(response.data)
             setActivity(response.data)
         }catch(error){
