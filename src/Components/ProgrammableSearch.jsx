@@ -12,7 +12,6 @@ const ProgrammableSearch = ({activity}) => {
             let response = await axios.get(`https://www.googleapis.com/customsearch/v1?key=${process.env.REACT_APP_GOOGLE_SEARCH_API_KEY}&cx=591758451358fdc45&q=${activity.activity}`)
 
             let data = response.data.items
-            console.log('response',data)
             setResults(data)
         }catch(error){
             console.log('err', error)
@@ -24,7 +23,6 @@ const ProgrammableSearch = ({activity}) => {
                 <SearchResult key={elem.cacheId} result={elem}/>
             )
         })
-        console.log('mapped')
         return mappedResults
     }
     const resetResults = () => {
